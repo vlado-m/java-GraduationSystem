@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout :: navbar"></div>
+
+<div class="container">
+    <h2 th:text="${thesis.title}">Thesis Title</h2>
+    <p><strong>Submitted:</strong> <span th:text="${thesis.uploadDate}"/></p>
+    <p th:text="${thesis.text}"/>
+    <div th:if="${thesis.uploadedFileName}">
+        <a th:href="@{'/uploads/' + ${thesis.uploadedFileName}}">Download Thesis File</a>
+    </div>
+</div>
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

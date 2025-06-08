@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout :: navbar"></div>
+
+<div class="container">
+    <h2>All Theses</h2>
+    <table>
+        <thead>
+        <tr><th>Title</th><th>Uploaded</th><th>File</th></tr>
+        </thead>
+        <tbody>
+        <tr th:each="thesis : ${theses}">
+            <td th:text="${thesis.title}"></td>
+            <td th:text="${thesis.uploadDate}"></td>
+            <td>
+                <a th:if="${thesis.uploadedFileName != null}"
+                   th:href="@{'/uploads/' + ${thesis.uploadedFileName}}"
+                   th:text="${thesis.uploadedFileName}">Download</a>
+                <span th:if="${thesis.uploadedFileName == null}">—</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>
