@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<head>
+    <title>Application Details</title>
+</head>
+<body>
+<h1>Application #<span th:text="${application.id}"></span></h1>
+<dl>
+    <dt>Topic:</dt><dd th:text="${application.topic}"></dd>
+    <dt>Goal:</dt><dd th:text="${application.goal}"></dd>
+    <dt>Tasks:</dt><dd th:text="${application.tasks}"></dd>
+    <dt>Technologies:</dt><dd th:text="${application.technologies}"></dd>
+    <dt>Status:</dt><dd th:text="${application.status}"></dd>
+    <dt>Student:</dt><dd th:text="${application.student.name}"></dd>
+    <dt>Supervisor:</dt><dd th:text="${application.supervisor.name}"></dd>
+</dl>
+<p><a th:href="@{/applications}">Back to list</a></p>
+</body>
+</html>

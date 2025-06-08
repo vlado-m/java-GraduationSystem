@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: layout">
+<head>
+    <title>Submit Application</title>
+</head>
+<body>
+<h1>Submit New Application</h1>
+<form th:action="@{/applications}" th:object="${application}" method="post">
+    <div>
+        <label>Topic:</label>
+        <input type="text" th:field="*{topic}" />
+    </div>
+    <div>
+        <label>Goal:</label>
+        <textarea th:field="*{goal}"></textarea>
+    </div>
+    <div>
+        <label>Tasks:</label>
+        <textarea th:field="*{tasks}"></textarea>
+    </div>
+    <div>
+        <label>Technologies:</label>
+        <input type="text" th:field="*{technologies}" />
+    </div>
+
+    <div>
+        <label>Student:</label>
+        <select th:field="*{student.id}">
+            <option th:each="s : ${students}" th:value="${s.id}" th:text="${s.name}"></option>
+        </select>
+    </div>
+    <div>
+        <label>Supervisor:</label>
+        <select th:field="*{supervisor.id}">
+            <option th:each="t : ${teachers}" th:value="${t.id}" th:text="${t.name}"></option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

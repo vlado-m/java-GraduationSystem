@@ -1,0 +1,39 @@
+<!-- src/main/resources/templates/register.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Graduation System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/applications}">Applications</a> |
+        <a th:href="@{/theses}">Theses</a> |
+        <a th:href="@{/reviews}">Reviews</a> |
+        <a th:href="@{/defenses}">Defenses</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Create Account</h1>
+    <form th:action="@{/register}" th:object="${user}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" th:field="*{username}" required>
+            <small>Between 2-50 characters</small>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" required>
+            <small>Minimum 8 characters</small>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+</main>
+</body>
+</html>

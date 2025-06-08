@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="~{::title}">Graduation System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/applications}">Applications</a> |
+        <a th:href="@{/theses}">Theses</a> |
+        <a th:href="@{/reviews}">Reviews</a> |
+        <a th:href="@{/defenses}">Defenses</a>
+    </nav>
+</header>
+
+<main>
+    <div th:replace="~{::body}"></div>
+</main>
+</body>
+</html>
