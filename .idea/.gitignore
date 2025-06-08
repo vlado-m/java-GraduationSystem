@@ -6,3 +6,16 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Ignore compiled class files
+*.class
+
+# Ignore IntelliJ build output
+/out/
+/build/
+
+/.idea/
+/*.iml
+
+# Ignore logs and temporary files
+*.log
